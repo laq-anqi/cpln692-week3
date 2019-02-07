@@ -37,6 +37,8 @@
     represent every restaurant in your restaurant data. Save this as variable
     "restaurantData".
 
+
+
     ## Task 2: Process Data
 
     Create a marker for each element in "restaurantData". Your final code should
@@ -74,10 +76,22 @@
     Start code
 
     ===================== */
+var restaurantData = [[39.951011,-75.166631,'restaurant1'],[39.950476,-75.166191,'restaurant2'],[39.949259,-75.163015,'restaurant3']]
 
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
+var addMarker = (map) => {
+  for (let i=0; i < restaurantData.length; i++) {
+    L.marker([restaurantData[i][0],restaurantData[i][1]]).addTo(map).bindPopup(restaurantData[i][2])
+    .openPopup();
+  }
+}
+
+addMarker(map)
+
+restaurantData.push([39.954145, -75.188618,'restaurant4'])
+restaurantData.push([39.953446, -75.187116,'restaurant5'])
+addMarker(map)
+
+
 
     /* =====================
 

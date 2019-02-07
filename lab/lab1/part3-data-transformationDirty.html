@@ -63,7 +63,7 @@
 
     ===================== */
 
-    var data = bikeArrayClean;
+    var data = bikeArrayDirty;
 
     /* =====================
 
@@ -74,7 +74,7 @@ var dataFiltered=[]
 
 var Filter = (data)=>{
   for (let i=0; i<data.length; i++){
-    if (data[i][3]>20) {
+    if (parseFloat(data[i][3])>20) {
       dataFiltered.push(data[i])
     }
   }
